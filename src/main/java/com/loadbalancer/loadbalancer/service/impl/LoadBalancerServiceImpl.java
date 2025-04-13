@@ -86,7 +86,6 @@ public class LoadBalancerServiceImpl implements LoadBalancerService {
         ResponseEntity<String> temporaryResponse = ResponseEntity.accepted()
                 .body("Request is successfully forwarded to the backend server: " + selected.getUrl());
 
-        // Process the request asynchronously
         webClient.method(method)
                 .uri(fullUrl)
                 .headers(h -> h.addAll(headers))
